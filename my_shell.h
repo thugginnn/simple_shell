@@ -83,7 +83,7 @@ void expand_variables(shell_info_t *shell_info);
 void expand_aliases(shell_info_t *shell_info);
 
 /* Append the string to the end of the buffer */
-int buffer_add(char *buffer, char *str_to_add);
+int custom_buffer_add(char *buffer, char *str_to_add);
 
 
 /*======== str_tok.c ========*/
