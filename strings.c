@@ -94,7 +94,7 @@ int custom_str_compare(char *string1, char *string2, int number)
  *
  * Return: pointer to the array
  */
-char *str_concat(char *string1, char *string2)
+char *custom_str_concat(char *string1, char *string2)
 {
 	char *result;
 	int length1 = 0, length2 = 0;

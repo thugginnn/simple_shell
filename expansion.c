@@ -86,12 +86,12 @@ void expand_aliases(shell_info_t *shell_info)
 	}
 }
 /**
- * buffer_add - Append a string at the end of the buffer.
+ * custom_buffer_add - Append a string at the end of the buffer.
  * @buffer: The buffer to be filled.
  * @str_to_add: The string to be copied into the buffer.
  * Return: The new length of the buffer.
  */
-int buffer_add(char *buffer, char *str_to_add)
+int custom_buffer_add(char *buffer, char *str_to_add)
 {
 	int length, i;
 
