@@ -9,7 +9,7 @@ int execute_command(shell_info_t *shell_info)
 	int retval = 0, status;
 	pid_t pid;
 
-	retval = execute_command(shell_info);
+	retval = custom_builtins_list(shell_info);
 	if (retval != -1)
 	{
 		return (retval);
@@ -24,7 +24,7 @@ int execute_command(shell_info_t *shell_info)
 		pid = fork();
 		if (pid == -1)
 		{
-			perror("fork");
+			perror(shell_info->command_name);
 			exit(EXIT_FAILURE);
 		}
 		if (pid == 0)
@@ -33,7 +33,7 @@ int execute_command(shell_info_t *shell_info)
 					shell_info->tokens, shell_info->env);
 			if (retval == -1)
 			{
-				perror("execve");
+				perror(shell_info->command_name);
 				exit(EXIT_FAILURE);
 			}
 		}
