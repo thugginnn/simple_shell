@@ -13,6 +13,13 @@
 #include <errno.h> /* For error codes */
 #include <sys/stat.h> /* For file status information */
 
+#define INVALID 1
+#define INV 2
+#define ECK 3
+#define ARG 4
+#define FOR 5
+#define ECH 6
+
 
 /************* MACROS **************/
 
@@ -74,8 +81,6 @@ int custom_getline(shell_info_t *shell_info);
 int custom_check_logic_ops(char *commands[], int i, char operators[]);
 
 
-/*======== expansions.c ========*/
-
 /* Expand variables */
 void expand_variables(shell_info_t *shell_info);
 
@@ -85,8 +90,6 @@ void expand_aliases(shell_info_t *shell_info);
 /* Append the string to the end of the buffer */
 int custom_buffer_add(char *buffer, char *str_to_add);
 
-
-/*======== str_tok.c ========*/
 
 /* Separate the string into tokens using a designated delimiter */
 void custom_tokenize(shell_info_t *shell_info);
